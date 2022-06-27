@@ -1,0 +1,24 @@
+.password-slider {
+  position: absolute;
+  left: 250px;
+  width: 50%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 4px;
+  background: #fff;
+  outline: none;
+  border-radius: 2px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background: #00d1ff;
+  cursor: pointer;
+}

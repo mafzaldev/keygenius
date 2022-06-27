@@ -1,38 +1,331 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color)),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color)),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color));
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #0b0b0b;
+  color: #fff;
+  font-size: 100%;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  background-color: #131414;
+}
+a {
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 25px;
+  margin: 10px 0 10px 10px;
+  margin-right: auto;
+}
+span a {
+  margin-left: 5px;
+  padding-left: 0px;
+}
+
+span a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  list-style-type: none;
+  margin-right: 8%;
+}
+
+li a {
+  font-size: 20px;
+  font-weight: 600;
+  list-style-type: none;
+}
+
+label {
+  font-size: 16px;
+  margin-left: 5px;
+  text-transform: capitalize;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border: solid 1px #00d1ff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #00d1ff;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 543px;
+  width: 500px;
+  left: 470px;
+  top: 100px;
+  padding: 20px;
+  gap: 25px;
+  border-radius: 24px;
+  background-color: #131414;
+}
+
+.side-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.slogan {
+  font-family: Cabinet Grotesk;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 25px;
+  width: 80%;
+  text-align: center;
+  margin-top: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-@keyframes App-logo-spin {
+.password-gen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.password-lengthbar {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.password-length {
+  position: absolute;
+  left: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.length-value {
+  color: #00d1ff;
+}
+
+.combinations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: space-between;
+  -ms-flex-align: space-between;
+  align-items: space-between;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.button {
+  width: 400px;
+  height: 55px;
+  background-color: #00d1ff;
+  border-radius: 10px;
+  border: none;
+
+  font-family: "Cabinet Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  -webkit-box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.button:active {
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
+}
+.generated-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 55px;
+  width: 300px;
+  margin-right: 5px;
+}
+
+.password-field {
+  padding: 15px 15px 15px 0;
+  height: 45px;
+  width: 250px;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.reloadButton {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.reloadButton:active {
+  -webkit-animation: rotation 0.2s linear;
+  animation: rotation 0.2s linear;
+}
+
+.courtesy {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #fff;
+}
+
+@-webkit-keyframes rotation {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 90%;
+  }
+  nav {
+    width: 500px;
+  }
+  .main {
+    top: 150px;
+    left: 0px;
   }
 }
