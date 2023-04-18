@@ -1,70 +1,70 @@
-import "./App.css"
-import "./Slider.css"
-import { useState, useEffect } from "react"
-import Navbar from "./Componenets/Navbar"
-import Main from "./Componenets/Main"
+import "./App.css";
+import "./Slider.css";
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
 
 function App() {
-  const [slider, setSlider] = useState(16)
-  const [password, setPassword] = useState("")
+  const [slider, setSlider] = useState(16);
+  const [password, setPassword] = useState("");
 
-  const [upperCase, setUpperCase] = useState(true)
-  const [lowerCase, setLowerCase] = useState(false)
-  const [numbers, setNumbers] = useState(false)
-  const [symbols, setSymbols] = useState(true)
+  const [upperCase, setUpperCase] = useState(true);
+  const [lowerCase, setLowerCase] = useState(true);
+  const [numbers, setNumbers] = useState(true);
+  const [symbols, setSymbols] = useState(false);
 
   const randomFunc = {
     upperCase: getRandomUpper,
     lowerCase: getRandomLower,
     numbers: getRandomNumber,
     symbols: getRandomSymbol,
-  }
+  };
 
   useEffect(() => {
-    generatePassword()
+    generatePassword();
     // eslint-disable-next-line
-  }, [setPassword])
+  }, [setPassword]);
 
   function generatePassword() {
-    let generatedPassword = ""
-    const typesCount = upperCase + lowerCase + numbers + symbols
+    let generatedPassword = "";
+    const typesCount = upperCase + lowerCase + numbers + symbols;
     const typesArr = [
       { upperCase },
       { lowerCase },
       { numbers },
       { symbols },
-    ].filter((item) => Object.values(item)[0])
+    ].filter((item) => Object.values(item)[0]);
 
     if (typesCount === 0) {
-      setPassword("")
-      return
+      setPassword("");
+      return;
     }
 
     for (let i = 0; i < slider; i += typesCount) {
       // eslint-disable-next-line
       typesArr.forEach((type) => {
-        const funcName = Object.keys(type)[0]
-        generatedPassword += randomFunc[funcName]()
-      })
+        const funcName = Object.keys(type)[0];
+        generatedPassword += randomFunc[funcName]();
+      });
     }
-    setPassword(generatedPassword.slice(0, slider))
+    setPassword(generatedPassword.slice(0, slider));
   }
 
   function getRandomLower() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
   }
 
   function getRandomUpper() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
   }
 
   function getRandomNumber() {
-    return +String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+    return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   }
 
   function getRandomSymbol() {
-    const symbols = "!@#$%^&*(){}[]=<>/,."
-    return symbols[Math.floor(Math.random() * symbols.length)]
+    const symbols = "!@#$%^&*(){}[]=<>/,.";
+    return symbols[Math.floor(Math.random() * symbols.length)];
   }
 
   return (
@@ -82,7 +82,7 @@ function App() {
         generatePassword={generatePassword}
       />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

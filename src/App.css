@@ -109,11 +109,10 @@ input[type="checkbox"]:checked {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  position: absolute;
-  height: 543px;
+  position: relative;
+  height: 540px;
   width: 500px;
-  left: 470px;
-  top: 100px;
+  margin: 10px auto;
   padding: 20px;
   gap: 25px;
   border-radius: 24px;
@@ -289,7 +288,7 @@ input[type="checkbox"]:checked {
   animation: rotation 0.2s linear;
 }
 
-.courtesy {
+.credits {
   margin-top: 15px;
   font-size: 15px;
   color: #fff;
@@ -325,7 +324,8 @@ input[type="checkbox"]:checked {
     width: 500px;
   }
   .main {
-    top: 150px;
-    left: 0px;
+    margin-top: 80px;
+    left: 25px;
+    width: 450px;
   }
 }
